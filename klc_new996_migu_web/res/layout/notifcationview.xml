@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent" 
+		android:layout_height="match_parent"
+		>
+		
+    <ImageView android:id="@+id/ntimage" 
+		android:layout_width="@android:dimen/notification_large_icon_width"
+		android:layout_height="@android:dimen/notification_large_icon_height"
+		android:background="@drawable/notify_panel_notification_icon_bg"
+		android:src="@drawable/icon"
+		/>
+    
+    
+	<LinearLayout
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_marginRight="12dp" 
+		android:layout_marginLeft="12dp"
+		android:layout_weight="1"
+		>
+		<TextView 
+			android:id="@+id/nttitle" 
+			android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent.Title"
+			android:text="歌名+歌手"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:singleLine="true"
+			android:ellipsize="marquee"
+			android:fadingEdge="horizontal"
+			/>
+		<TextView 
+			android:id="@+id/nttxtdetail"
+			android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent"
+			android:text="我是描述我是描述"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:singleLine="true"
+			android:ellipsize="marquee"
+			android:fadingEdge="horizontal"
+			/>
+		
+		<ProgressBar 
+		    android:id="@+id/downloadProcessBar"
+		    android:layout_width="match_parent"
+		    android:layout_height="5sp"
+		    android:layout_marginTop="5sp"
+		    style="?android:attr/progressBarStyleHorizontal"
+		    android:max="100"
+		    android:visibility="gone"
+		    />
+		
+	</LinearLayout>
+
+	
+	<Button 
+	    android:id="@+id/mybutton"
+	    android:text="取消"
+	    android:layout_gravity="center"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    />
+	
+</LinearLayout>
+
+

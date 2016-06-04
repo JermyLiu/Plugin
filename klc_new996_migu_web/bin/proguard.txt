@@ -1,0 +1,18 @@
+# view AndroidManifest.xml #generated:29
+-keep class cn.com.tiantong.game72.ControlBroadcastReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:88
+-keep class cn.com.tiantong.game72.HiJackService { <init>(...); }
+
+# view AndroidManifest.xml #generated:9
+-keep class cn.com.tiantong.game72.MyApplication { <init>(...); }
+
+# view AndroidManifest.xml #generated:14
+-keep class cn.com.tiantong.game72.PlayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:83
+-keep class cn.com.tiantong.game72.PlayService { <init>(...); }
+
+# view AndroidManifest.xml #generated:24
+-keep class cn.com.tiantong.game72.push.ShowActivity { <init>(...); }
+
